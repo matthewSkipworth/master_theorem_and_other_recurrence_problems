@@ -5,6 +5,7 @@
 Matthew Skipworth\\
 TCSS 343\\
 Homework3\\ \\
+\textbf{2.1}\\ \\
 1.) $$T(n)= \Bigg\{^{c,\ if\ n<8}_{16T(\frac{n}{8})+nlogn,\ if\ n\ \geq 8}$$
 From the recurrence we see that: $a=16, b=8, f(n)=nlogn$.
 We then plug the values into the function $n^{log_{b}a}$ and check
@@ -39,6 +40,15 @@ it against $f(n)$ for equality.
 $$n^{2.5}\ ?\ n^{log_{\frac{5}{3}}3},\ n^{2.5}>n^{2.15066 \dots}$$
 Based on these conditions we know that the recurrence fits case 3, 
 where: $T(n)= \Theta(f(n))$ or $T(n)=  \Theta(n^{2.5})$.\\ \\
+\textbf{2.2}\\ \\
+1.) $$T(n)= \Bigg\{_{3T(\frac{n}{2})+n^3\ for\ n>1}^{c\ for\ n \leq 1}$$
+2.) From the recurrence we see that $a=3,b=2,f(n)=n^3$. We then plug the values into the function $n^{log_{b}a}$ and check it against f(n) for equality. 
+$$n^3\ ?\ n^{log_{2}3},\ n^3>n^{1.58496 \dots}$$
+Based on these conditions we know that the recurrence fits case 3, where: $T(n)= \Theta (f(n))= \Theta(n^3)$.\\ \\ \\
+3.)$$T(n)= \Bigg\{_{T(\frac{n}{2})+nlog(logn)\ for\ n>1}^{c\ for\ n \leq 1}$$
+4.) From the recurrence we see that $a=1,b=2,f(n)=nlog(logn)$. We then plug the values into the function $n^{log_{b}a}$ and check it against f(n) for equality. 
+$$nlog(logn)\ ?\ n^{log_{2}1},\ nlog(logn)>n^0$$
+Based on these conditions we know that the recurrence fits case 3, where: $T(n)= \Theta (f(n))= \Theta(nlog(logn))$.\\ \\
 %\begin{align*}
 %3+8&=7\\
 %7&=7+0
