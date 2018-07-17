@@ -1,0 +1,20 @@
+\documentclass[page=4,11pt]{article}
+\usepackage{amsmath}
+\begin{document}
+\ \\
+Matthew Skipworth\\
+TCSS 343\\
+Homework3\\ \\
+1.) $$T(n)= \Bigg\{^{c,\ if\ n<8}_{16T(\frac{n}{8})+nlogn,\ if\ n\ \geq 8}$$
+From the recurrence we see that: $a=16, b=8, f(n)=nlogn$.
+We then plug the values into the function $n^{log_{b}a}$ and check
+it against $f(n)$ for equality.
+$$nlogn\ ?\ n^{log_{8}16},\ nlogn<n^{\frac{3}{4}}$$
+Based on these conditions we know that the recurrence fits case 1, 
+where: $T(n)= \Theta(n^{log_{b}(a)-\epsilon})$ or $T(n)=  \Theta(n^{log_{\frac{4}{3}}})$.
+
+\begin{align*}
+3+8&=7\\
+7&=7+0
+\end{align*}
+\end{document}
