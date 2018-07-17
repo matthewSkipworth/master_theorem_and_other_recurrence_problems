@@ -31,7 +31,14 @@ We then plug the values into the function $n^{log_{b}a}$ and check
 it against $f(n)$ for equality.
 $$n^{2}\ ?\ n^{log_{\frac{5}{3}}3},\ n^2<n^{2.15066 \dots}$$
 Based on these conditions we know that the recurrence fits case 1, 
-where: $T(n)= \Theta(f(n))$ or $T(n)=  \Theta(n^{2.15066 \dots})$.\\ \\
+where: $T(n)= \Theta(n^{log_ba})$ or $T(n)=  \Theta(n^{2.15066 \dots})$.\\ \\
+5.) $$T(n)= \Bigg\{^{c,\ if\ n\leq1}_{3T(\frac{3n}{5})+n^{2}\sqrt{n},\ if\ n > 1}$$
+From the recurrence we see that: $a=3, b=\frac{5}{3}, f(n)=n^{2}\sqrt{n}$.
+We then plug the values into the function $n^{log_{b}a}$ and check
+it against $f(n)$ for equality.
+$$n^{2.5}\ ?\ n^{log_{\frac{5}{3}}3},\ n^{2.5}>n^{2.15066 \dots}$$
+Based on these conditions we know that the recurrence fits case 3, 
+where: $T(n)= \Theta(f(n))$ or $T(n)=  \Theta(n^{2.5})$.\\ \\
 %\begin{align*}
 %3+8&=7\\
 %7&=7+0
