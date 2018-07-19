@@ -12,7 +12,7 @@ public class Main {
 		Scanner console_input=new Scanner(System.in);
 		int num_ints=console_input.nextInt();
 		
-		System.out.println(num_ints);
+		//System.out.println(num_ints);
 		Random random_ints = new Random();
 		Set<Integer> numSet1 = new HashSet<Integer>();
 
@@ -39,58 +39,128 @@ public class Main {
 		Collections.shuffle(Arrays.asList(a1st));
 		Collections.shuffle(Arrays.asList(amid));
 		
-		System.out.print(Arrays.toString(a1st));
+		//System.out.print(Arrays.toString(a1st));
 		
+		
+		System.out.println();
+		//System.out.println(Arrays.toString(a1st));
 		
 		System.out.println();
 		//System.out.println(pivotMid(a,0,a.length-1));
 		//pivot1st(amid,0,amid.length-1);
-		quickSort1st(a1st);
-		System.out.print(a1st[0]);
-		for (int i =1; i < a1st.length;i++) {
-			System.out.print(", "+a1st[i]);
-		}
+		//quickSortMid(amid);
+		//System.out.println(pivot1st(a1st,0,a1st.length-1));
+		//System.out.print(amid[0]);
+		//for (int i =1; i < amid.length;i++) {
+		//	System.out.print(", "+amid[i]);
+		//}
 		
-		System.out.println();
-		//System.out.println(pivotMid(a,0,a.length-1));
-		//pivot1st(amid,0,amid.length-1);
+		long start1st = System.nanoTime();
 		quickSort1st(a1st);
-		System.out.print(a1st[0]);
-		for (int i =1; i < a1st.length;i++) {
-			System.out.print(", "+a1st[i]);
-		}
+		long end1st = System.nanoTime();
+		System.out.println((long) (end1st-start1st)/1000 +"microseconds to run quickSort1st.");
 		
+		long startmid = System.nanoTime();
+		quickSortMid(amid);
+		long endmid = System.nanoTime();
+		System.out.println((long) (endmid-startmid)/1000 +"microseconds to run quickSortMid.");
+		
+		long start1st2 = System.nanoTime();
+		quickSort1st(a1st);
+		long end1st2 = System.nanoTime();
+		System.out.println((long) (end1st2-start1st2)/1000 +"microseconds to run quickSort1st2.");
+		
+		long startmid2 = System.nanoTime();
+		quickSortMid(amid);
+		long endmid2 = System.nanoTime();
+		System.out.println((long) (endmid2-startmid2)/1000 +"microseconds to run quickSortMid2.");
  	}
 	public static int pivot1st(Integer[] a, int l, int r) {
-		System.out.println(l+" "+r);
+		int p=a[l];
+		int i = l-1;
+		int j = r+1;
+		while (true){
+			
+			do {
+				i++;
+			} while(a[i]<p);
+			
+			do {
+				j--;
+			} while(a[j]>p);
+			
+			if (i>=j) {
+				return j;
+			} else {
+				int temp = a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+	}
+		
+		
+		/*	//System.out.println(l+" "+r);
 		int i, j, p;
 		p=a[l];
 		i=l-1;
 		j=r+1;
-		System.out.println(p + " "+ i +" "+j);
+		//System.out.println(p + " "+ i +" "+j);
 		do {
 			do {
 				i++;
+				
+				System.out.println("i = "+i);
 			} while(a[i]<p);
-			//System.out.println(i);
+			
 			do {
 				j--;
+				System.out.println("j = "+j);
 			} while(a[j]>p);
 			
 			swap(a, i, j);
 		} while (i<j);
-		swap(a,i,j); //undo last swap.
-		swap(a,l,j); //pivot resides on index j.
-		
+		if (i>=j) {
+			 //undo last swap.
+			return j;
+		}
+		swap(a,i,j);
+		System.out.println("i = "+i+", j = "+j);
+		//swap(a,l,j); //pivot resides on index j.
+	
 		return j;
-	}
+	}*/
 
 	public static int pivotMid(Integer[] a, int l, int r) {
-		int middle_element=a[((l+r)/2)];
+		//public static int pivot1st(Integer[] a, int l, int r) {
+		int p=a[(l+r)/2];
+		int i = l-1;
+		int j = r+1;
+		while (true){
+				
+			do {
+				i++;
+			} while(a[i]<p);
+				
+			do {
+				j--;
+			} while(a[j]>p);
+				
+			if (i>=j) {
+				return j;
+			} else {
+				int temp = a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+	}
+		
+		/*int middle_element=a[((l+r)/2)];
 		int i, j, p;
 		p=middle_element;
 		i=l-1;
-		j=r+1;
+		j=r;
 		do {
 			do {
 				i++;
@@ -105,7 +175,7 @@ public class Main {
 		swap(a,l,j); //pivot resides on index j.
 		
 		return j;
-		}
+		}*/
 	
 	public static void swap(Integer[] amid, int i, int j) {
 		int temp = amid[i];
